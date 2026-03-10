@@ -14,7 +14,7 @@
             color: rgb(255, 247, 0);
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         }
-        .checklist-table {
+        .checklist-table, .stratagem-table {
             margin: 0 auto;
             border-collapse: collapse;
             width: 80%;
@@ -190,6 +190,149 @@
                     <input type="checkbox" id="knight-checkbox" style="transform: scale(2.5);">
                 </td>
             </tr>
+            <tr>
+                <td>
+                    <br>
+                    SMG-37 Defender
+                    <br>
+                    <img src="images/SMG/Defender.png" alt="defender" style="width: 350px;">
+                </td>
+                <td>SMG</td>
+                <td>15<img src="images/icons/warbond-medal.png" alt="warbond-medal" width="35" style="vertical-align: middle; margin-left: 10px;"><br>Helldivers Mobilize</td>
+                <td>
+                    <input type="checkbox" id="defender-checkbox" style="transform: scale(2.5);">
+                </td>
+            </tr>
+        </table>
+
+        <br><br><br><br>
+
+
+        <table border="2" class="stratagem-table">
+            <tr style="color: rgb(255, 247, 0); font-size: 45px;">
+                <th>– Stratagem –</th>
+                <th>– Type –</th>
+                <th>– Cost/Acquisition –</th>
+                <th>– ✅ –</th>
+            </tr>
+            <tr>
+                <td>
+                    <br>
+                    MG-43 Machine Gun
+                    <br><br>
+                    <img src="images/stratagems/support-weapons/Machine-Gun.png" alt="machine-gun" width="150px">
+                    <br><br>
+                </td>
+                <td>Support Weapon</td>
+                <td>N/A</td>
+                <td>
+                    <input type="checkbox" id="machine-gun-checkbox" style="transform: scale(2.5);">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <br>
+                    APW-1 Anti-Material Rifle
+                    <br><br>
+                    <img src="images/stratagems/support-weapons/antimaterial.png" alt="anti-material-rifle" width="150px">
+                    <br><br>
+                </td>
+                <td>Support Weapon</td>
+                <td>5000 <img src="images/icons/requsition.png" alt="requisition" width="30" style="vertical-align: middle;"> <br> Patriotic Administration Center</td>
+                <td>
+                    <input type="checkbox" id="anti-material-checkbox" style="transform: scale(2.5);">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <br>
+                    M-105 Stalwart
+                    <br><br>
+                    <img src="images/stratagems/support-weapons/Stalwart.png" alt="stalwart" width="150px">
+                    <br><br>
+                </td>
+                <td>Support Weapon</td>
+                <td>3500 <img src="images/icons/requsition.png" alt="requisition" width="30" style="vertical-align: middle;"> <br> Patriotic Administration Center</td>
+                <td>
+                    <input type="checkbox" id="stalwart-checkbox" style="transform: scale(2.5);">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <br>
+                    EAT-17 Expandaple Anti-Tank
+                    <br><br>
+                    <img src="images/stratagems/support-weapons/E.A.T..png" alt="EAT-17 Expandaple Anti-Tank" width="150px">
+                    <br><br>
+                </td>
+                <td>Support Weapon</td>
+                <td>3000 <img src="images/icons/requsition.png" alt="requisition" width="30" style="vertical-align: middle;"> <br> Patriotic Administration Center</td>
+                <td>
+                    <input type="checkbox" id="EAT-checkbox" style="transform: scale(2.5);">
+                </td>
+            </tr>
+            <tr>
+                 <td>
+                    <br>
+                    GR-8 Recoiless-Rifle
+                    <br><br>
+                    <img src="images/stratagems/support-weapons/recoiless-rifle.png" alt="recoiless-rifle" width="150px">
+                    <br><br>
+                </td>
+                <td>Support Weapon</td>
+                <td>6000 <img src="images/icons/requsition.png" alt="requisition" width="30" style="vertical-align: middle;"> <br> Patriotic Administration Center</td>
+                <td>
+                    <input type="checkbox" id="recoiless-rifle-checkbox" style="transform: scale(2.5);">
+                </td>
+            </tr>
+            <tr>
+                 <td>
+                    <br>
+                    Flam-40 Flamethrower
+                    <br><br>
+                    <img src="images/stratagems/support-weapons/flamethrower.png" alt="flamethrower" width="150px">
+                    <br><br>
+                </td>
+                <td>Support Weapon</td>
+                <td>6000 <img src="images/icons/requsition.png" alt="requisition" width="30" style="vertical-align: middle;"> <br> Patriotic Administration Center</td>
+                <td>
+                    <input type="checkbox" id="flamethrowerwwd-checkbox" style="transform: scale(2.5);">
+                </td>
+            </tr>
+            <tr>
+                 <td>
+                    <br>
+                    AC-8 Autocannon
+                    <br><br>
+                    <img src="images/stratagems/support-weapons/autocannon.png" alt="autocannon" width="150px">
+                    <br><br>
+                </td>
+                <td>Support Weapon</td>
+                <td>7000 <img src="images/icons/requsition.png" alt="requisition" width="30" style="vertical-align: middle;"> <br> Patriotic Administration Center</td>
+                <td>
+                    <input type="checkbox" id="autocannon-checkbox" style="transform: scale(2.5);">
+                </td>
+            </tr>
+            
         </table>
     </body>
+
+
+    <script>
+       let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+checkboxes.forEach(cb => {
+    cb.addEventListener('change', () => {
+        localStorage.setItem(cb.id, cb.checked);
+    });
+});
+
+checkboxes.forEach(cb => {
+    let saved = localStorage.getItem(cb.id);
+    if (saved !== null) {
+        cb.checked = saved === "true";
+    }
+});
+
+    </script>
 </html>
